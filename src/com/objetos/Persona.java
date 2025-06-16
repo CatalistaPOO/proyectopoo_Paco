@@ -3,16 +3,13 @@ package com.objetos;
 public class Persona {
     //CONSTRUCTOR LLEVA EL NOMBRE DE LA CLASE
     public Persona() {
-        //CUANDO ALGUIEN PONGA new Persona()
-        //ENTRA EN ESTE CODIGO
-        System.out.println("Soy una nueva persona!!!");
-        //TODAS LAS PERSONAS TENDRAN UN GENERO FEMENINO
-        //AL SER CREADAS
+        System.out.println("Soy Constructor vacío de persona!!!");
         this.setGenero(tipoGenero.FEMENINO);
     }
 
     //OTRO CONSTRUCTOR QUE RECIBIRA LOS DATOS QUE YO QUIERA
     public Persona(String nombre, String apellidos){
+        System.out.println("Constructor con nombre y apellidos Persona");
         this.nombre = nombre;
         this.apellidos = apellidos;
     }
