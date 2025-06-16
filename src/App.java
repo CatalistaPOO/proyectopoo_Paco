@@ -19,6 +19,11 @@ public class App {
             System.out.println(personaje.getNombreCompleto());
             System.out.println(personaje.getNombreCompleto(true));
             System.out.println(personaje.getNombreCompleto(19));
+            
+            System.out.println("12345678" + Persona.getLetraNif(12345678));
+            System.out.println("34256789" + Persona.getLetraNif(34256789));
+
+            
         } catch (Exception e) {
             //NUNCA DEJAREMOS UN CATCH VACIO
             System.out.println("Error: " + e.getMessage());

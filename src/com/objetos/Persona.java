@@ -83,24 +83,38 @@ public class Persona {
         return 19;
     }
 
-    //COMENZAMOS CREANDO UNA NUEVA PROPIEDAD LLAMADA dni
-    //DE TIPO int
-    private int dni;
-
-    public int getDni() {
-        return this.dni;
-    }
-
-    public void setDni(int dni) {
-        this.dni = dni;
-    }
-
-    //POSTERIORMENTE VAMOS A REALIZAR 
-    //EL METODO PARA RECUPERAR LA LETRA DEL DNI
-    public char getLetraNif(){
+    //METODO PARA RECUPERAR LA LETRA DEL DNI
+    public static char getLetraNif(int dni){
         String letrasDni = "TRWAGMYFPDXBNJZSQVHLCKET";
-        int resultado = (this.dni - (this.dni / 23) * 23);
+        int resultado = (dni - (dni / 23) * 23);
         char letra = letrasDni.charAt(resultado);
         return letra;
+    }
+
+    public static String dameFechaHoy(){
+        return "16/06/2025";
+    }
+
+    //PROPIEDAD PARA ALMACENAR EL DNI COMPLETO
+    private String dni;
+
+    public String getDni() {
+        return this.dni;
+    }
+    //PARA COMPROBAR SI EL DNI EL CORRECTO, DEBEMOS
+    //HACERLO CUANDO LO RECIBIMOS
+    public void setDni(String dni) throws Exception {
+        char letraDni = dni.charAt(dni.length() - 1);
+        String temp = dni.substring(0, dni.length() - 1);
+        int numeroDni = Integer.parseInt(temp);
+        int resultado = (numeroDni - (numeroDni / 23) * 23);
+        String letrasDni = "TRWAGMYFPDXBNJZSQVHLCKET";
+        char letra = letrasDni.charAt(resultado);
+        if (letraDni == letra){
+            this.dni = dni;
+        }else{
+            throw new Exception("La letra del DNI es incorrecta "
+            + letra);
+        }
     }
 }
