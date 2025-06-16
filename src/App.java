@@ -1,13 +1,19 @@
+import com.objetos.Empleado;
 import com.objetos.Persona;
 
 public class App {
     public static void main(String[] args) {
         System.out.println("Probando la clase Persona");
         try {
+            Empleado emp = new Empleado();
+            
+            Persona tyrion = new Persona("Tyrion", "Lannister");
+            System.out.println(tyrion.getNombreCompleto());
             //CUANDO HABLAMOS DE CLASES, NECESITAMOS OBJETOS PARA 
             //TRABAJAR CON DICHAS CLASES
             //INSTANCIAMOS EL OBJETO PERSONA
             Persona personaje = new Persona();
+            System.out.println("Genero: " + personaje.getGenero());
             //YA PODEMOS UTILIZAR LA PERSONA Y SUS PROPIEDADES
             personaje.setNombre("Jon");
             personaje.setApellidos("Nieve");
