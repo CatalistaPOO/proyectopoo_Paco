@@ -82,4 +82,25 @@ public class Persona {
     public int getNombreCompleto(String a, int b){
         return 19;
     }
+
+    //COMENZAMOS CREANDO UNA NUEVA PROPIEDAD LLAMADA dni
+    //DE TIPO int
+    private int dni;
+
+    public int getDni() {
+        return this.dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
+    //POSTERIORMENTE VAMOS A REALIZAR 
+    //EL METODO PARA RECUPERAR LA LETRA DEL DNI
+    public char getLetraNif(){
+        String letrasDni = "TRWAGMYFPDXBNJZSQVHLCKET";
+        int resultado = (this.dni - (this.dni / 23) * 23);
+        char letra = letrasDni.charAt(resultado);
+        return letra;
+    }
 }
