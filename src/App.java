@@ -23,7 +23,7 @@ public class App {
             System.out.println("12345678" + Persona.getLetraNif(12345678));
             System.out.println("34256789" + Persona.getLetraNif(34256789));
 
-            
+            personaje.setDni("12345678Z");
         } catch (Exception e) {
             //NUNCA DEJAREMOS UN CATCH VACIO
             System.out.println("Error: " + e.getMessage());
