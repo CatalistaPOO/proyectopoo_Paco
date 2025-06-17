@@ -6,6 +6,7 @@ public class App {
         System.out.println("Probando la clase Persona");
         try {
             //CREAMOS UNA COLECCION PARA ALMACENAR EMPLEADOS
+            
             ArrayList<Persona> empleados = new ArrayList<Persona>();
             Empleado emp1 = new Empleado();
             emp1.setNombre("Empleado 1");
