@@ -1,35 +1,80 @@
-import com.objetos.Director;
-import com.objetos.Empleado;
+import com.objetos.*;
+import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
         System.out.println("Probando la clase Persona");
         try {
-            Empleado emp = new Empleado();
+            //CREAMOS UNA COLECCION PARA ALMACENAR EMPLEADOS
+            ArrayList<Persona> empleados = new ArrayList<Persona>();
+            Empleado emp1 = new Empleado();
+            emp1.setNombre("Empleado 1");
+            emp1.setApellidos("Empleado 1");
+            empleados.add(emp1);
+            System.out.println("Emp1: " + emp1.getClass());
+            //DIBUJAMOS LA CLASE DE LA COLECCION
+            System.out.println("Colección 0: " 
+            + empleados.get(0).getClass());
+            Empleado emp2 = new Empleado();
+            emp2.setNombre("Empleado 2");
+            emp2.setApellidos("Empleado 2");
+            empleados.add(emp2);  
+            //PODRIAMOS AGREGAR UN DIRECTOR???
             Director dire = new Director();
-            System.out.println("Vacaciones empleado: "
-            + emp.getDiasVacaciones());
-            System.out.println("Vacaciones director: "
-            + dire.getDiasVacaciones());
+            dire.setNombre("Director");
+            dire.setApellidos("Director");
+            empleados.add(dire);
+            Persona becario = new Persona();
+            becario.setNombre("Becario");
+            becario.setApellidos("Becario");
+            empleados.add(becario);
+            //POR SUPUESTO, PODEMOS RECORRER TODOS LOS EMPLEADOS
+            for (Persona emp: empleados){
+                //AQUI ESTAMOS RECORRIENDO Personas, pero en realidad
+                //TENEMOS MULTIPLES OBJETOS (Persona, Empleado y Director)
+                //SI NECESITAMOS APLICAR ALGUN METODO DE LA CLASE 
+                //ESPECIFICA, DEBEMOS PREGUNTAR POR EL TIPO DE CLASE
+                //Y REALIZAR UN CASTING
+                if (emp instanceof Director){
+                    //PODEMOS MANDAR
+                    ((Director)emp).mandar();
+                }
+                System.out.println(emp.getNombreCompleto());
+            }
+            //TENEMOS LOS SIGUIENTES DATOS EN LA COLECCION:
+            //0,1 --> Empleado
+            //2 --> Director
+            //3 --> Persona
+            //SI DESEO RECUPERAR EL OBJETO 0...
+            //CON QUE FORMA VIENE LA POSICION CERO?: Persona
+            //SI ESTAMOS SEGUROS, PODEMOS REALIZAN UN CASTING
+            //UN CASTING ES CONVERTIR UN OBJETO EN OTRO SIEMPRE
+            //QUE SEAN COMPATIBLES.
+            // (clase)objeto
+            Empleado temp = (Empleado) empleados.get(0);
+            //QUEREMOS AL DIRECTOR
+            Director jefe = (Director) empleados.get(2);
+            jefe.mandar();
+            
 
 
 
-
-
-
+            // Empleado emp = new Empleado();
+            // Director dire = new Director();
+            // System.out.println(emp.toString());
 
             //EL SALARIO MINIMO SON 1200 DE UN EMPLEADO
-            emp.setNombre("Santos");
-            emp.setApellidos("Cerdan");
-            System.out.println("Salario mínimo EMPLEADO: "
-             + emp.getSalarioMinimo());
+            // emp.setNombre("Santos");
+            // emp.setApellidos("Cerdan");
+            // System.out.println("Salario mínimo EMPLEADO: "
+            //  + emp.getSalarioMinimo());
 
-            System.out.println("Salario mínimo DIRECTOR: "
-             + dire.getSalarioMinimo());
-            emp.setNombre("Empleado");
-            emp.setApellidos("Empleado");
-            emp.setSueldo(1800);
-            System.out.println(emp.getNombreCompleto());
+            // System.out.println("Salario mínimo DIRECTOR: "
+            //  + dire.getSalarioMinimo());
+            // emp.setNombre("Empleado");
+            // emp.setApellidos("Empleado");
+            // emp.setSueldo(1800);
+            // System.out.println(emp.getNombreCompleto());
             // Persona tyrion = new Persona("Tyrion", "Lannister");
             // System.out.println(tyrion.getNombreCompleto());
             // //CUANDO HABLAMOS DE CLASES, NECESITAMOS OBJETOS PARA 

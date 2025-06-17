@@ -1,9 +1,21 @@
 package com.objetos;
 
 public class Empleado extends Persona {
+    @Override
+    public String toString(){
+        return this.getNombreCompleto() +
+        ", Salario mínimo: " + this.getSalarioMinimo();
+    }
+
+    //METODO QUE NO SE PUEDE SOBRESCRIBIR
+    public final void metodoFinal() {
+        System.out.println("Soy un método final");
+    }
+
     //CREAMOS UN METODO PARA MOSTRAR LAS VACACIONES
     //DE UN EMPLEADO
     public int getDiasVacaciones(){
+        System.out.println("Vacaciones de empleado");
         return 22;
     }
 
