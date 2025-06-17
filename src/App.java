@@ -6,12 +6,24 @@ public class App {
         System.out.println("Probando la clase Persona");
         try {
             Empleado emp = new Empleado();
+            Director dire = new Director();
+            System.out.println("Vacaciones empleado: "
+            + emp.getDiasVacaciones());
+            System.out.println("Vacaciones director: "
+            + dire.getDiasVacaciones());
+
+
+
+
+
+
+
             //EL SALARIO MINIMO SON 1200 DE UN EMPLEADO
             emp.setNombre("Santos");
             emp.setApellidos("Cerdan");
             System.out.println("Salario mínimo EMPLEADO: "
              + emp.getSalarioMinimo());
-            Director dire = new Director();
+
             System.out.println("Salario mínimo DIRECTOR: "
              + dire.getSalarioMinimo());
             emp.setNombre("Empleado");
