@@ -10,12 +10,12 @@ public class Clima {
         for (int i = 1; i <= 12; i++){
             Mes mes = new Mes();
             //PEDIMOS LOS DATOS AL USUARIO
-            System.out.println("Nombre mes");
+            System.out.println("Nombre mes " + i);
             String nombre = teclado.nextLine();
             System.out.println("Temperatura máxima");
-            int tempMax = teclado.nextInt();
+            int tempMax = Integer.parseInt( teclado.nextLine());
             System.out.println("Temperatura mínima");
-            int tempMin = teclado.nextInt();
+            int tempMin = Integer.parseInt( teclado.nextLine());
             mes.setNombre(nombre);
             mes.setTemperaturaMaxima(tempMax);
             mes.setTemperaturaMinima(tempMin);    
