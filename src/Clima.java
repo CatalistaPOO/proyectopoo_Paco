@@ -9,9 +9,16 @@ public class Clima {
         //BUCLE PARA ALMACENAR MESES
         for (int i = 1; i <= 12; i++){
             Mes mes = new Mes();
-            mes.setNombre("JUNIO " + i);
-            mes.setTemperaturaMaxima(38);
-            mes.setTemperaturaMinima(20);    
+            //PEDIMOS LOS DATOS AL USUARIO
+            System.out.println("Nombre mes");
+            String nombre = teclado.nextLine();
+            System.out.println("Temperatura máxima");
+            int tempMax = teclado.nextInt();
+            System.out.println("Temperatura mínima");
+            int tempMin = teclado.nextInt();
+            mes.setNombre(nombre);
+            mes.setTemperaturaMaxima(tempMax);
+            mes.setTemperaturaMinima(tempMin);    
             meses.add(mes);
         }
         //BUCLE PARA DIBUJAR LOS MESES
