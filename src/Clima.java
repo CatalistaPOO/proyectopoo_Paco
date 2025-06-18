@@ -12,9 +12,8 @@ public class Clima {
             Mes mes = new Mes();
             String nombre = nombresmeses[i - 1];
             System.out.println("Temperatura máxima");
-            int tempMax = Integer.parseInt( teclado.nextLine());
-            System.out.println("Temperatura mínima");
-            int tempMin = Integer.parseInt( teclado.nextLine());
+            int tempMax = 0; //GENERAMOS ALEATORIO
+            int tempMin = 1; //GENERAMOS ALEATORIO
             mes.setNombre(nombre);
             mes.setTemperaturaMaxima(tempMax);
             mes.setTemperaturaMinima(tempMin);    
