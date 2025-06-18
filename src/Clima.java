@@ -6,12 +6,11 @@ public class Clima {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         ArrayList<Mes> meses = new ArrayList<Mes>();
+        String[] nombresmeses = new String[] {"ENERO", "FEBRERO"};
         //BUCLE PARA ALMACENAR MESES
         for (int i = 1; i <= 12; i++){
             Mes mes = new Mes();
-            //PEDIMOS LOS DATOS AL USUARIO
-            System.out.println("Nombre mes " + i);
-            String nombre = teclado.nextLine();
+            String nombre = nombresmeses[i - 1];
             System.out.println("Temperatura máxima");
             int tempMax = Integer.parseInt( teclado.nextLine());
             System.out.println("Temperatura mínima");
