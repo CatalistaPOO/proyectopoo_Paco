@@ -50,7 +50,7 @@ public class Coche {
         return 0;
     }
 
-    public void setVelocidad(int velocidad) {
+    protected void setVelocidad(int velocidad) {
         this.velocidad = velocidad;
     }
 
