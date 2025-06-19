@@ -1,19 +1,21 @@
 import com.objetos.Mes;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Random;
 
 public class Clima {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        Random random = new Random();
         ArrayList<Mes> meses = new ArrayList<Mes>();
-        String[] nombresmeses = new String[] {"ENERO", "FEBRERO"};
+        String[] nombresmeses = new String[] 
+        {"ENERO", "FEBRERO", "MARZO", "ABRIL"
+        , "MAYO", "JUNIO", "JULIO", "AGOSTO"
+        , "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"};
         //BUCLE PARA ALMACENAR MESES
         for (int i = 1; i <= 12; i++){
             Mes mes = new Mes();
             String nombre = nombresmeses[i - 1];
-            System.out.println("Temperatura máxima");
-            int tempMax = 0; //GENERAMOS ALEATORIO
-            int tempMin = 1; //GENERAMOS ALEATORIO
+            int tempMax = random.nextInt(17, 45); //GENERAMOS ALEATORIO
+            int tempMin = random.nextInt(-10, 16); //GENERAMOS ALEATORIO
             mes.setNombre(nombre);
             mes.setTemperaturaMaxima(tempMax);
             mes.setTemperaturaMinima(tempMin);    
